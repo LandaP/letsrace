@@ -1,0 +1,22 @@
+--CREATE DATABASE IF NOT EXISTS racing_game_db;
+
+USE racing_game_db;
+
+DROP TABLE cars;
+
+CREATE TABLE IF NOT EXISTS cars(
+    car_id INT AUTO_INCREMENT PRIMARY KEY,
+    model VARCHAR(255) NOT NULL UNIQUE,
+    acceleration INT NOT NULL,
+    braking INT NOT NULL,
+    cornering INT NOT NULL,
+    top_speed INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)  ENGINE=INNODB;
+
+DESCRIBE cars;
+
+INSERT INTO cars(model, acceleration, braking, cornering, top_speed) VALUES('CORV', 8, 3, 4, 9);
+INSERT INTO cars(model, acceleration, braking, cornering, top_speed) VALUES('GTR', 6, 7, 9, 8);
+INSERT INTO cars(model, acceleration, braking, cornering, top_speed) VALUES('GTS', 6, 6, 8, 7);
+INSERT INTO cars(model, acceleration, braking, cornering, top_speed) VALUES('MUST', 9, 4, 6, 10);
